@@ -243,12 +243,12 @@ def bot_speed_info(call):
 def ask_to_upload_file(call):
     user_id = call.from_user.id
     if bot_locked:
-        bot.send_message(call.message.chat.id, "⚠️ The bot is currently locked. Please contact the developer @YourStalkerbxby.")
+        bot.send_message(call.message.chat.id, "⚠️ The bot is currently locked. Please contact the developer @R4GE143.")
         return
     if free_mode or (user_id in user_subscriptions and user_subscriptions[user_id]['expiry'] > datetime.now()):
         bot.send_message(call.message.chat.id, "📄 Please send the file you want to upload.")
     else:
-        bot.send_message(call.message.chat.id, "⚠️ You need a subscription to use this feature. Please contact the developer @YourStalkerbxby")
+        bot.send_message(call.message.chat.id, "⚠️ You need a subscription to use this feature. Please contact the developer @R4GE143")
 
 @bot.callback_query_handler(func=lambda call: call.data == 'subscription')
 def subscription_menu(call):
@@ -383,7 +383,7 @@ def toggle_free_mode(call):
 def handle_file(message):
     user_id = message.from_user.id
     if bot_locked:
-        bot.reply_to(message, "⚠️ The bot is currently locked. Please contact the developer @YourStalkerbxby")
+        bot.reply_to(message, "⚠️ The bot is currently locked. Please contact the developer @R4GE143")
         return
     if free_mode or (user_id in user_subscriptions and user_subscriptions[user_id]['expiry'] > datetime.now()):
         try:
@@ -439,7 +439,7 @@ def handle_file(message):
         except Exception as e:
             bot.reply_to(message, f"❌ Error: {e}")
     else:
-        bot.reply_to(message, "⚠️ You need a subscription to use this feature. Please contact the developer @YourStalkerbxby")
+        bot.reply_to(message, "⚠️ You need a subscription to use this feature. Please contact the developer @R4GE143")
 
 def run_script(script_path, chat_id, folder_path, file_name, original_message):
     try:
